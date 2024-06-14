@@ -7,7 +7,6 @@ import { Server } from "./presentation/server";
 
 async function main() {
   //TODO: await db
-  // TODO: server init
 
   new Server({ port: envs.PORT }).start();
 }
