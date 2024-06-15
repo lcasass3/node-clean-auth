@@ -6,6 +6,7 @@ import {
   RegisterUserDTO,
   User,
 } from "../../domain";
+import { UserMapper } from "../mappers/user.mapper";
 
 type HashFunction = (password: string) => string;
 type CompareFunction = (password: string, hashed: string) => boolean;
@@ -31,7 +32,7 @@ export class MongoAuthDataSourceImpl implements AuthDatasource {
 
       await user.save();
 
-      return new User(user.id, name, email, password, user.roles);
+      return UserMapper.userEntityFromObject(user);
     } catch (error) {
       if (error instanceof CustomError) throw error;
     }
