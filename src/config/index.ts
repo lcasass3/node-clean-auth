@@ -1,3 +1,4 @@
 export * from "./envs";
-export * from "./validators";
+export * from "./utils/validators";
+export * from "./utils/handleErrors";
 export * from "./bcrypt";
