@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { AuthRepository, RegisterUserDTO } from "../../domain";
+import { handleError } from "../../config";
 
 export class AuthController {
   constructor(private readonly authRepository: AuthRepository) {}
@@ -11,7 +12,7 @@ export class AuthController {
     this.authRepository
       .register(registerUserDto!)
       .then((user) => res.json(user))
-      .catch((error) => res.status(500).json(error));
+      .catch((error) => handleError(error, res));
   };
 
   loginUser = (req: Request, res: Response) => {
