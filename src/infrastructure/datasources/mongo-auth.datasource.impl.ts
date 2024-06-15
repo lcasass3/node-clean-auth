@@ -5,7 +5,7 @@ import {
   User,
 } from "../../domain";
 
-export class AuthDataSourceImpl implements AuthDatasource {
+export class MongoAuthDataSourceImpl implements AuthDatasource {
   async register(registerUserDto: RegisterUserDTO): Promise<User> {
     const { name, email, password } = registerUserDto;
 
