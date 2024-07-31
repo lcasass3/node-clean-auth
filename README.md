@@ -1,1 +1,2 @@
-# This is a basic node authentication app using clean architecture
+# Clean node
+Node project using typescript, mongodb and implementing clean architecture.
